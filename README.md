@@ -53,26 +53,26 @@ Results show **InceptionV3** achieves the highest classification accuracy, while
 
 ##  Model Architectures
 
-### **1️⃣ Basic CNN (Baseline)**
+### **1️. Basic CNN (Baseline)**
 - **3 Conv layers** → ReLU activations
 - **MaxPooling** after each convolution
 - **Flatten + Dense (128 neurons)**
 - **Output Layer** → 4 classes (Softmax)
 > Acts as a benchmark for deeper models.
 
-### **2️⃣ VGG19**
+### **2️. VGG19**
 - **19 layers**: 16 Conv + 3 Dense
 - Uniform **3×3 kernels** for feature extraction
 - **Pretrained on ImageNet** + fine-tuning top layers
 - Strength: Captures **fine-grained patterns** like cystic boundaries.
 
-### **3️⃣ ResNet50**
+### **3️. ResNet50**
 - **50 layers** with **residual skip connections**
 - Uses **16 residual blocks** (1×1, 3×3, 1×1 conv layers)
 - Avoids **vanishing gradient** → trains deeper networks efficiently
 - Best suited for **complex textures** and **organ boundary variations**.
 
-### **4️⃣ InceptionV3**
+### **4️. InceptionV3**
 - **Inception Modules**: Multi-scale feature extraction
 - Parallel **1×1, 3×3, 5×5 convolutions** per module
 - **Factorized convolutions** for lower computation
@@ -132,13 +132,14 @@ All advanced models (**VGG19**, **ResNet50**, **InceptionV3**) achieved **100% v
 - **Scalability**: Could be embedded into cloud-based diagnostic platforms
 
 ---
+Terminal 1: Run backend
+'''
+cd backend
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
+'''
 
-##  Future Work
-
--  **Quantum-Enhanced CNNs (QDCNN)** → Faster and more accurate predictions
--  **Federated Learning** → Privacy-preserving training across hospitals
--  **Edge Deployment** → Real-time classification on mobile devices
--  **Multimodal Fusion** → Combine CT, MRI, and ultrasound data
--  **Clinical Trials** → Validate on real-world hospital datasets
-
----
+Terminal 2: Run frontend
+'''
+cd frontend
+npm run dev
+'''
