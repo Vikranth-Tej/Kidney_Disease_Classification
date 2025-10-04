@@ -132,14 +132,4 @@ All advanced models (**VGG19**, **ResNet50**, **InceptionV3**) achieved **100% v
 - **Scalability**: Could be embedded into cloud-based diagnostic platforms
 
 ---
-### Terminal 1: Run backend
-```
-cd backend
-uvicorn main:app --reload --host 127.0.0.1 --port 8000
-```
 
-### Terminal 2: Run frontend
-```
-cd frontend
-npm run dev
-```
